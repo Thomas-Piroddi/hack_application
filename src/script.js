@@ -22,21 +22,23 @@ const callDeathApi = async (month, day) => {
 
     const deathList = result.deaths;
     const randomDeath = deathList[Math.floor(Math.random() * deathList.length)];
+    console.log(randomDeath.year, randomDeath.description)
     return {
     year: randomDeath.year,
     description: randomDeath.description
     }
 }
     
-const callBirthApi = async () => {
+const callBirthApi = async (month,day) => {
     const call = await fetch(`https://byabbe.se/on-this-day/${month}/${day}/births.json`)
     .then((res) => res) // return result
     .catch((err) => err) // return error
 
     const result = await call.json() // Fetch API returns 'readableStream', you must run .json() to convert it to JSON.
-    const eventList = result.events;
-    const randomEvent = eventList[Math.floor(Math.random() * eventList.length)];
-    console.log(randomEvent.year)
-    console.log(randomEvent.description)
+    const eventList = result.births;
+
+    const randomBirth = eventList[Math.floor(Math.random() * eventList.length)];
+    console.log(randomBirth.year)
+    console.log(randomBirth.description)
 
 }
