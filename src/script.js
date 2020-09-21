@@ -1,5 +1,3 @@
-// let p = document.getElementById("fact")
-
 
 const callEventsApi = async (month, day) => {
     const call = await fetch(`https://byabbe.se/on-this-day/${month}/${day}/events.json`)
@@ -11,8 +9,7 @@ const callEventsApi = async (month, day) => {
     const randomEvent = eventList[Math.floor(Math.random() * eventList.length)];
     // console.log(randomEvent.year)
     // console.log(randomEvent.description)
-    // let heading = document.getElementById("fact-heading")
-    // heading.textContent
+
 
     displayFacts(randomEvent.year, randomEvent.description, "event")
     
@@ -70,9 +67,13 @@ const displayFacts = (date, fact, type) => { // function that takes in the year 
     // li.appendChild(factText)
 
     liHeading.textContent = `${type}:` // display heading as type given
+    liHeading.classList = "fact-heading"
     li.textContent = `${date} - ${fact}`
+    li.classList = "fact-text"
 
     let ul = document.getElementById("fact-ul")
     ul.appendChild(liHeading)
     ul.appendChild(li) // append the fact and date to the ul
 }
+
+// const 
