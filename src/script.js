@@ -9,8 +9,10 @@ const callEventsApi = async (month, day) => {
     const result = await call.json() // this is gonna fetch API returns 'readableStream', you must run .json() to convert it to JSON. weird thing just to change it back to json
     const eventList = result.events;
     const randomEvent = eventList[Math.floor(Math.random() * eventList.length)];
-    console.log(randomEvent.year)
-    console.log(randomEvent.description)
+    // console.log(randomEvent.year)
+    // console.log(randomEvent.description)
+
+    displayFacts(randomEvent.year, randomEvent.description)
     
 }
     
@@ -22,11 +24,13 @@ const callDeathApi = async (month, day) => {
 
     const deathList = result.deaths;
     const randomDeath = deathList[Math.floor(Math.random() * deathList.length)];
-    console.log(randomDeath.year, randomDeath.description)
-    return {
-    year: randomDeath.year,
-    description: randomDeath.description
-    }
+    // console.log(randomDeath.year, randomDeath.description)
+    // return {
+    // year: randomDeath.year,
+    // description: randomDeath.description
+    // }
+
+    displayFacts(randomDeath.year, randomDeath.description)
 }
     
 const callBirthApi = async (month,day) => {
@@ -38,7 +42,24 @@ const callBirthApi = async (month,day) => {
     const eventList = result.births;
 
     const randomBirth = eventList[Math.floor(Math.random() * eventList.length)];
-    console.log(randomBirth.year)
-    console.log(randomBirth.description)
+    // console.log(randomBirth.year)
+    // console.log(randomBirth.description)
+    displayFacts(randomBirth.year, randomBirth.description)
 
+}
+
+const displayFacts = (date, fact) => { // function that takes in the year and the fact and displays them
+    let li = document.createElement("li") 
+
+    // not sure which is best practice so leaving them both in here for now :
+
+    // let dateText = document.createTextNode(date) 
+    // let factText = document.createTextNode(fact)
+    // li.appendChild(dateText)
+    // li.appendChild(factText)
+
+    li.textContent = `${date} - ${fact}`
+
+    let ul = document.getElementById("fact-ul")
+    ul.appendChild(li) // append the fact and date to the ul
 }
