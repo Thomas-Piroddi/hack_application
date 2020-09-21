@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
 </head>
 <body>
-    <button id="btn" onclick="callEventsApi(3, 4)">get fact</button>
-    <p id="fact"></p>
+
+    <div id="heading">
+        <h1>Enter your birthday below to recieve a special fact</h1>
+        <h4>You may choose an event, a birth, or a death that occured on your date</h4>
+        </div>
+    <div id="page">
+        <div id="form-and-btns">
+        <!-- dropdown here -->
+            <div id="btns">
+                <div id="first-row">
+                <button id="event-btn" class="button" onclick="callEventsApi(3, 31)">Events</button>
+                <button id="birth-btn" class="button" onclick="callBirthApi(3, 4)">Births</button>
+                <button id="death-btn" class="button" onclick="callDeathApi(3, 4)">Deaths</button>
+                
+                <button id="all-btn" class="button" onclick="callAllApi(3, 4)">One of each</button>
+                </div>
+                <button id="historical-btn" class="button ">I'm feelin' historical</button>
+            </div>
+    </div>
+
+        <div id="facts-div">
+            <ul id="fact-ul"></ul>
+        </div>
+    </div>
     
     <script src="script.js"></script>
 </body>
