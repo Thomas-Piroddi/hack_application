@@ -7,13 +7,19 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <!-- dropdown here -->
+    <div id="page">
+        <h1>Enter your birthday below to recieve a special fact</h1>
+        <h3>You may choose an event, a birth, or a death that occured on your date, or even one of each</h3>
+        <!-- dropdown here -->
 
-    <button id="event-btn" onclick="callEventsApi(3, 31)">Events</button>
-    <button id="birth-btn" onclick="callBirthApi(3, 4)">Births</button>
-    <button id="death-btn" onclick="callDeathApi(3, 4)">Deaths</button>
-    <p id="fact"></p>
-    <ul id="fact-ul"></ul>
+        <button id="event-btn" onclick="callEventsApi(3, 31)">Events</button>
+        <button id="birth-btn" onclick="callBirthApi(3, 4)">Births</button>
+        <button id="death-btn" onclick="callDeathApi(3, 4)">Deaths</button>
+        <button id="all-btn" onclick="callAllApi(3, 4)">One of each</button>
+        <button id="all-btn" onclick="#">I'm feelin historical</button>
+        <p id="fact"></p>
+        <ul id="fact-ul"></ul>
+    </div>
     
     <script src="script.js"></script>
 </body>

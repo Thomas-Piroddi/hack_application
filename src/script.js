@@ -11,8 +11,10 @@ const callEventsApi = async (month, day) => {
     const randomEvent = eventList[Math.floor(Math.random() * eventList.length)];
     // console.log(randomEvent.year)
     // console.log(randomEvent.description)
+    // let heading = document.getElementById("fact-heading")
+    // heading.textContent
 
-    displayFacts(randomEvent.year, randomEvent.description)
+    displayFacts(randomEvent.year, randomEvent.description, "event")
     
 }
     
@@ -30,7 +32,7 @@ const callDeathApi = async (month, day) => {
     // description: randomDeath.description
     // }
 
-    displayFacts(randomDeath.year, randomDeath.description)
+    displayFacts(randomDeath.year, randomDeath.description, "death")
 }
     
 const callBirthApi = async (month,day) => {
@@ -44,11 +46,20 @@ const callBirthApi = async (month,day) => {
     const randomBirth = eventList[Math.floor(Math.random() * eventList.length)];
     // console.log(randomBirth.year)
     // console.log(randomBirth.description)
-    displayFacts(randomBirth.year, randomBirth.description)
+    displayFacts(randomBirth.year, randomBirth.description, "birth")
 
 }
 
-const displayFacts = (date, fact) => { // function that takes in the year and the fact and displays them
+const callAllApi = (month, day) => { // display one of each type
+
+    let event = callEventsApi(month, day)
+    let birth = callBirthApi(month, day)
+    let death = callDeathApi(month, day)
+
+}
+
+const displayFacts = (date, fact, type) => { // function that takes in the year and the fact and displays them
+    let liHeading = document.createElement("li") // create heading
     let li = document.createElement("li") 
 
     // not sure which is best practice so leaving them both in here for now :
@@ -58,8 +69,10 @@ const displayFacts = (date, fact) => { // function that takes in the year and th
     // li.appendChild(dateText)
     // li.appendChild(factText)
 
+    liHeading.textContent = `${type}:` // display heading as type given
     li.textContent = `${date} - ${fact}`
 
     let ul = document.getElementById("fact-ul")
+    ul.appendChild(liHeading)
     ul.appendChild(li) // append the fact and date to the ul
 }
