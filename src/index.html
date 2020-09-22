@@ -3,43 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Birthday Facts</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="dropdown.css">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+   
 </head>
 <body>
 
     <div id="heading">
-        <h1>Enter your birthday below to recieve a special fact</h1>
+        <h1>Enter your birthday below to receive a special fact</h1>
         <h4>You may choose an event, a birth, or a death that occured on your date</h4>
         </div>
     <div id="page">
         <div id="form-and-btns">
-        <!-- dropdown here -->
-            <div id="dropdown-div">
-                <div id='box1' >
-                </div>
-                
-                <!-- <br/>
-                <br/> -->
-                
-                
-                <div id='box2' >
-                </div>
-            </div>
 
+            <div id="datepicker-div">
+                <input type="date" onChange="onChangeHandler(value)" id="date-form">
+            </div>
+            
 
             <div id="btns">
                 <div id="first-row">
-                <button id="event-btn" class="button" onclick="callEventsApi(3, 31)">Events</button>
-                <button id="birth-btn" class="button" onclick="callBirthApi(3, 4)">Births</button>
-                <button id="death-btn" class="button" onclick="callDeathApi(3, 4)">Deaths</button>
-                <button id="all-btn" class="button" onclick="callAllApi(3, 4)">One of each</button>
+                <button id="event-btn" class="button" onclick="callEventsApi(day, month)" disabled>Events</button>
+                <button id="birth-btn" class="button" onclick="callBirthApi(day, month)" disabled>Births</button>
+                <button id="death-btn" class="button" onclick="callDeathApi(day, month)" disabled>Deaths</button>
+                <button id="all-btn" class="button" onclick="callAllApi(day, month)" disabled>One of each</button>
                 </div>
                 <button id="historical-btn" class="button" onclick="randomFact()">I'm feelin' historical</button>
+                <button id="clear-btn" class="button" onclick="clearBtn()">Clear</button>
             </div>
+
+            <div id="error-div"></div>
     </div>
 
         <div id="facts-div">
@@ -48,6 +42,27 @@
     </div>
     
     <script src="script.js"></script>
-    <script src="dropdown.js"></script>
+    <script>
+        let day = '';
+        let month = '';
+
+        let events = document.getElementById("event-btn")
+        let births = document.getElementById("birth-btn")
+        let deaths = document.getElementById("death-btn")
+        let all = document.getElementById("all-btn")
+
+        const onChangeHandler = (value) => {
+            day = parseInt(`${value[5]}${value[6]}`);
+            month = parseInt(`${value[8]}${value[9]}`);
+            if (value != ''){
+                events.disabled = false
+                births.disabled = false
+                deaths.disabled = false
+                all.disabled = false
+            }
+
+        }
+    
+    </script>
 </body>
 </html>
