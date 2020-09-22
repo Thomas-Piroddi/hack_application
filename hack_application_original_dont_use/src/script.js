@@ -9,7 +9,7 @@ const callEventsApi = async (month, day) => {
 
 
 
-    displayFacts(day, month, randomEvent.year, randomEvent.description, "event")
+    displayFacts(day, month, randomEvent.year, randomEvent.description, "Event")
     
 }
     
@@ -23,7 +23,7 @@ const callDeathApi = async (month, day) => {
     const randomDeath = deathList[Math.floor(Math.random() * deathList.length)];
 
 
-    displayFacts(day, month, randomDeath.year, randomDeath.description, "death")
+    displayFacts(day, month, randomDeath.year, randomDeath.description, "Death")
 }
     
 const callBirthApi = async (month,day) => {
@@ -36,7 +36,7 @@ const callBirthApi = async (month,day) => {
 
     const randomBirth = eventList[Math.floor(Math.random() * eventList.length)];
 
-    displayFacts(day, month, randomBirth.year, randomBirth.description, "birth")
+    displayFacts(day, month, randomBirth.year, randomBirth.description, "Birth")
 
 }
 
@@ -55,10 +55,11 @@ const displayFacts = (day, month, year, fact, type) => { // function that takes 
     let liHeading = document.createElement("li") // create heading
     let li = document.createElement("li") 
 
-    // not sure which is best practice so leaving them both in here for now :
-
-    // let dateText = document.createTextNode(``) 
+    
+    // day.style.textDecoration = "italic"
+    
     let factText = document.createTextNode(`${day}/${month}/${year} - ${fact}`)
+
     // li.appendChild(dateText)
     
 
@@ -71,12 +72,12 @@ const displayFacts = (day, month, year, fact, type) => { // function that takes 
     
     ul.appendChild(liHeading)
     ul.appendChild(li) // append the fact and date to the ul
-    if (type == "birth"){
+    if (type == "Birth"){
         li.style.backgroundColor = "#94ff94"
-    } else if (type == "death"){
+    } else if (type == "Death"){
         li.style.backgroundColor = "#666666"
         li.style.color = "white"
-    } else if (type == "event"){
+    } else if (type == "Event"){
         li.style.backgroundColor = "#a3dcff"
     }
     
@@ -119,13 +120,24 @@ const randomFact = () => {
 
 const clearBtn = () => {
     let ul = document.getElementById("fact-ul")
+    let dateForm = document.getElementById("date-form")
 
-    ul.remove()
-    button.style.display = "none"
-    events.disabled = true
-                births.disabled = true
-                deaths.disabled = true
-                all.disabled = true
+    try{
+        ul.remove()
+        // button.style.display = "none"
+        // dateForm.value = ""
+        location.reload()
+        
+        // events.disabled = true
+        // births.disabled = true
+        // deaths.disabled = true
+        // all.disabled = true
+    }
+    catch(err){
+        console.log(err)
+
+    }
+    
 }
 
 // clearBtn()
