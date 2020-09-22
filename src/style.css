@@ -104,13 +104,6 @@
   padding: 2% 10%;
 }
 
-#page #fact-ul .fact-text {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 100;
-  padding-left: 5%;
-  list-style-type: none;
-}
-
 #page .fact-heading {
   list-style-type: none;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -120,8 +113,18 @@
 
 #page #facts-div {
   margin-top: 3%;
-  background-color: lightgreen;
-  width: 40vw;
-  padding: 3% 1%;
+  width: 45vw;
+}
+
+#page #facts-div #fact-ul {
+  padding: 0;
+}
+
+#page #facts-div #fact-ul .fact-text {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  padding: 5%;
+  list-style-type: none;
+  margin: 3% 0;
 }
 /*# sourceMappingURL=style.css.map */
