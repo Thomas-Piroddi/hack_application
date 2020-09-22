@@ -6,6 +6,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dropdown.css">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
 </head>
 <body>
@@ -17,6 +18,19 @@
     <div id="page">
         <div id="form-and-btns">
         <!-- dropdown here -->
+            <div id="dropdown-div">
+                <div id='box1' >
+                </div>
+                
+                <br/>
+                <br/>
+                
+                
+                <div id='box2' >
+                </div>
+            </div>
+
+
             <div id="btns">
                 <div id="first-row">
                 <button id="event-btn" class="button" onclick="callEventsApi(3, 31)">Events</button>
@@ -25,7 +39,7 @@
                 
                 <button id="all-btn" class="button" onclick="callAllApi(3, 4)">One of each</button>
                 </div>
-                <button id="historical-btn" class="button ">I'm feelin' historical</button>
+                <button id="historical-btn" class="button" onclick="randomfact()">I'm feelin' historical</button>
             </div>
     </div>
 
@@ -35,5 +49,6 @@
     </div>
     
     <script src="script.js"></script>
+    <script src="dropdown.js"></script>
 </body>
 </html>
