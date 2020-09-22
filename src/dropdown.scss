@@ -2,7 +2,7 @@ body
 .dropdown {
         background:white;
         border:1px solid #aaa;
-        width:200px;
+        width: 18vw;
         height:30px;
         box-shadow: 2px 2px 2px #999;
         border-radius: 5px;
@@ -15,6 +15,10 @@ body
         font-size:1.2em;
         font-family:Arial;
         position:relative;
+}
+
+#box1{
+    margin-right: 2%;
 }
 
 .dropdown_value {
