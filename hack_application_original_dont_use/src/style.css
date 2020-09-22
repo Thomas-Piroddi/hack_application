@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#heading {
+  height: 20vh;
+  width: 100%;
+  text-align: center;
+  padding: 3%;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+#heading h1 {
+  font-weight: 500;
+}
+
+#heading h4 {
+  padding: 1%;
+  font-weight: 400;
+  font-style: italic;
+}
+
+#page {
+  width: 80vw;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#page #form-and-btns {
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+  width: 40vw;
+  height: 35vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 6% 2%;
+  margin-top: 2%;
+}
+
+#page #form-and-btns #dropdown-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 4%;
+}
+
+#page #form-and-btns #btns {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 5%;
+}
+
+#page #form-and-btns #btns #first-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#page #form-and-btns #btns #first-row .button {
+  padding: 2% 0%;
+  width: 24%;
+}
+
+#page #form-and-btns #btns .button {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 1em;
+  margin-top: 3%;
+}
+
+#page #form-and-btns #btns #historical-btn, #page #form-and-btns #btns #clear-btn {
+  padding: 2% 10%;
+}
+
+#page .fact-heading {
+  list-style-type: none;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 600;
+  padding: 3% 0 0;
+}
+
+#page #facts-div {
+  margin-top: 3%;
+  width: 45vw;
+}
+
+#page #facts-div #fact-ul {
+  padding: 0;
+}
+
+#page #facts-div #fact-ul .fact-text {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  padding: 5%;
+  list-style-type: none;
+  margin: 1% 0;
+}
+/*# sourceMappingURL=style.css.map */
