@@ -90,8 +90,8 @@
 }
 
 #page #form-and-btns #btns #first-row .button {
-  padding: 1% 1%;
-  width: 9em;
+  padding: 2% 0%;
+  width: 24%;
 }
 
 #page #form-and-btns #btns .button {
@@ -125,6 +125,6 @@
   font-weight: 100;
   padding: 5%;
   list-style-type: none;
-  margin: 3% 0;
+  margin: 1% 0;
 }
 /*# sourceMappingURL=style.css.map */

@@ -104,11 +104,3 @@ const randomFact = () => {
     return (functionArray[randomNumber])(randomMonth, randomDay)
     
 }
-
-
-
-
-
-
-// reminder :
-// consider input validation for diferent months eg. february (28/29 days)
