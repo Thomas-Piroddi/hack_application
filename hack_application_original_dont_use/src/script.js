@@ -48,6 +48,9 @@ const callAllApi = (month, day) => { // display one of each type
 
 }
 
+let button = document.getElementById("clear-btn")
+button.style.display = "none"
+let ul = document.getElementById("fact-ul")
 const displayFacts = (day, month, year, fact, type) => { // function that takes in the year and the fact and displays them
     let liHeading = document.createElement("li") // create heading
     let li = document.createElement("li") 
@@ -65,7 +68,7 @@ const displayFacts = (day, month, year, fact, type) => { // function that takes 
     // li.textContent = `${day}/${month}/${year} - ${fact}`
     li.classList = "fact-text"
 
-    let ul = document.getElementById("fact-ul")
+    
     ul.appendChild(liHeading)
     ul.appendChild(li) // append the fact and date to the ul
     if (type == "birth"){
@@ -77,7 +80,14 @@ const displayFacts = (day, month, year, fact, type) => { // function that takes 
         li.style.backgroundColor = "#a3dcff"
     }
     
+    if (ul.hasChildNodes() == true){
+        button.style.display = "block"
+    } 
+    
 }
+
+
+
 
 const randomFact = () => {
     // get random number between one and 3 for events, births and deaths
@@ -103,3 +113,11 @@ const randomFact = () => {
     return (functionArray[randomNumber])(randomMonth, randomDay)
     
 }
+
+const clearBtn = () => {
+    let ul = document.getElementById("fact-ul")
+    ul.remove()
+    button.style.display = "none"
+}
+
+// clearBtn()

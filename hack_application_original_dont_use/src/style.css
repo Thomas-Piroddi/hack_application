@@ -41,7 +41,7 @@
   -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
           box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
   width: 40vw;
-  height: 25vh;
+  height: 35vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,7 +55,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 4% 2%;
+  padding: 6% 2%;
   margin-top: 2%;
 }
 
@@ -63,6 +63,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 4%;
 }
 
 #page #form-and-btns #btns {
@@ -74,6 +75,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-bottom: 5%;
 }
 
 #page #form-and-btns #btns #first-row {
@@ -100,7 +102,7 @@
   margin-top: 3%;
 }
 
-#page #form-and-btns #btns #historical-btn {
+#page #form-and-btns #btns #historical-btn, #page #form-and-btns #btns #clear-btn {
   padding: 2% 10%;
 }
 

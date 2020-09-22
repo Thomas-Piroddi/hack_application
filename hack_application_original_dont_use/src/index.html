@@ -6,7 +6,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="dropdown.css">
+    <!-- <link rel="stylesheet" href="dropdown.css"> -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
 </head>
 <body>
@@ -33,6 +33,7 @@
                 <button id="all-btn" class="button" onclick="callAllApi(day, month)">One of each</button>
                 </div>
                 <button id="historical-btn" class="button" onclick="randomFact()">I'm feelin' historical</button>
+                <button id="clear-btn" class="button" onclick="clearBtn()">Clear</button>
             </div>
     </div>
 
@@ -43,6 +44,9 @@
     
     <script src="script.js"></script>
     <script>
+        
+
+
         let day = '';
         let month = '';
         const onChangeHandler = (value) => {
