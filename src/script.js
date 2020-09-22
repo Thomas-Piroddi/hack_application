@@ -72,12 +72,15 @@ const displayFacts = (date, fact, type) => { // function that takes in the year 
 
 const randomFact = () => {
     // get random number between one and 3 for events, births and deaths
-    // get random date - (random 1-12 for months), (random 1-30)
+    // get random date - (random 1-12 for months), (random 1-30) 
     // consider different month lengths 
     // 30 days - sep, april, june, nov
     // 31 days - jan, march, may, july, august, oct, dec
     // keep it max 28 for feb
-
+    let randomMonth = Math.floor(Math.random() * 12)
+    if (randomMonth == 2){
+        
+    }
     
 }
 
