@@ -85,6 +85,9 @@ const displayFacts = (day, month, year, fact, type) => { // function that takes 
     } 
     
 }
+if (ul.hasChildNodes() == false){
+    button.style.display = "none"
+} 
 
 
 
@@ -116,8 +119,13 @@ const randomFact = () => {
 
 const clearBtn = () => {
     let ul = document.getElementById("fact-ul")
+
     ul.remove()
     button.style.display = "none"
+    events.disabled = true
+                births.disabled = true
+                deaths.disabled = true
+                all.disabled = true
 }
 
 // clearBtn()

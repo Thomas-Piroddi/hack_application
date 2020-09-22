@@ -21,16 +21,16 @@
             <div id="dropdown-div">
             </div>
             <div id="datepicker-div">
-                <input type="date" onChange="onChangeHandler(value)">
+                <input type="date" onChange="onChangeHandler(value)" >
             </div>
             
 
             <div id="btns">
                 <div id="first-row">
-                <button id="event-btn" class="button" onclick="callEventsApi(day, month)">Events</button>
-                <button id="birth-btn" class="button" onclick="callBirthApi(day, month)">Births</button>
-                <button id="death-btn" class="button" onclick="callDeathApi(day, month)">Deaths</button>
-                <button id="all-btn" class="button" onclick="callAllApi(day, month)">One of each</button>
+                <button id="event-btn" class="button" onclick="callEventsApi(day, month)" disabled>Events</button>
+                <button id="birth-btn" class="button" onclick="callBirthApi(day, month)" disabled>Births</button>
+                <button id="death-btn" class="button" onclick="callDeathApi(day, month)" disabled>Deaths</button>
+                <button id="all-btn" class="button" onclick="callAllApi(day, month)" disabled>One of each</button>
                 </div>
                 <button id="historical-btn" class="button" onclick="randomFact()">I'm feelin' historical</button>
                 <button id="clear-btn" class="button" onclick="clearBtn()">Clear</button>
@@ -49,10 +49,34 @@
 
         let day = '';
         let month = '';
+
+        let events = document.getElementById("event-btn")
+        let births = document.getElementById("birth-btn")
+        let deaths = document.getElementById("death-btn")
+        let all = document.getElementById("all-btn")
+
         const onChangeHandler = (value) => {
+
             day = parseInt(`${value[5]}${value[6]}`);
             month = parseInt(`${value[8]}${value[9]}`);
+            console.log(day)
+            if (value != ''){
+                events.disabled = false
+                births.disabled = false
+                deaths.disabled = false
+                all.disabled = false
+            }
+
         }
+        
+        
+        // console.log(day)
+        // if ((typeof(day) != NaN) || typeof((month) != NaN)){
+        //     events.disabled = false
+        //     births.disabled = false
+        //     deaths.disabled = false
+        //     all.disabled = false
+        // }
     </script>
 </body>
 </html>

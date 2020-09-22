@@ -41,7 +41,6 @@
   -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
           box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
   width: 40vw;
-  height: 35vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,8 +54,14 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 6% 2%;
+  padding: 2% 2%;
   margin-top: 2%;
+}
+
+#page #form-and-btns input[type=date] {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 1.05em;
+  width: 18vw;
 }
 
 #page #form-and-btns #dropdown-div {
