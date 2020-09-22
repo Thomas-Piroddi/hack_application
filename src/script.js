@@ -10,7 +10,7 @@ const callEventsApi = async (month, day) => {
 
 
 
-    displayFacts(randomEvent.year, randomEvent.description, "event")
+    displayFacts(day, month, randomEvent.year, randomEvent.description, "event")
     
 }
     
@@ -24,7 +24,7 @@ const callDeathApi = async (month, day) => {
     const randomDeath = deathList[Math.floor(Math.random() * deathList.length)];
 
 
-    displayFacts(randomDeath.year, randomDeath.description, "death")
+    displayFacts(day, month, randomDeath.year, randomDeath.description, "death")
 }
     
 const callBirthApi = async (month,day) => {
@@ -37,7 +37,7 @@ const callBirthApi = async (month,day) => {
 
     const randomBirth = eventList[Math.floor(Math.random() * eventList.length)];
 
-    displayFacts(randomBirth.year, randomBirth.description, "birth")
+    displayFacts(day, month, randomBirth.year, randomBirth.description, "birth")
 
 }
 
@@ -49,25 +49,26 @@ const callAllApi = (month, day) => { // display one of each type
 
 }
 
-const displayFacts = (date, fact, type) => { // function that takes in the year and the fact and displays them
+const displayFacts = (day, month, year, fact, type) => { // function that takes in the year and the fact and displays them
     let liHeading = document.createElement("li") // create heading
     let li = document.createElement("li") 
 
     // not sure which is best practice so leaving them both in here for now :
 
-    // let dateText = document.createTextNode(date) 
-    // let factText = document.createTextNode(fact)
+    // let dateText = document.createTextNode(``) 
+    let factText = document.createTextNode(`${day}/${month}/${year} - ${fact}`)
     // li.appendChild(dateText)
-    // li.appendChild(factText)
+    
 
     liHeading.textContent = `${type}:` // display heading as type given
     liHeading.classList = "fact-heading"
-    li.textContent = `${date} - ${fact}`
+    li.prepend(factText)
+    // li.textContent = `${day}/${month}/${year} - ${fact}`
     li.classList = "fact-text"
 
     let ul = document.getElementById("fact-ul")
-    ul.appendChild(liHeading)
-    ul.appendChild(li) // append the fact and date to the ul
+    // ul.prepend(liHeading)
+    ul.prepend(liHeading,li) // append the fact and date to the ul
     if (type == "birth"){
         li.style.backgroundColor = "#94ff94"
     } else if (type == "death"){
@@ -103,11 +104,3 @@ const randomFact = () => {
     return (functionArray[randomNumber])(randomMonth, randomDay)
     
 }
-
-
-
-
-
-
-// reminder :
-// consider input validation for diferent months eg. february (28/29 days)
