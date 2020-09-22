@@ -131,7 +131,7 @@
 
 #page #facts-div {
   margin-top: 3%;
-  width: 45vw;
+  width: 50vw;
 }
 
 #page #facts-div #fact-ul {
@@ -141,8 +141,9 @@
 #page #facts-div #fact-ul .fact-text {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 100;
-  padding: 5%;
+  padding: 3%;
   list-style-type: none;
   margin: 1% 0;
+  border-radius: 3px;
 }
 /*# sourceMappingURL=style.css.map */

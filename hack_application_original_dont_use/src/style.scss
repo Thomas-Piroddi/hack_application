@@ -79,7 +79,6 @@
                 border-radius: 3px;
                 background-color: white;
                 box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.55)
-                // border-color: #4287f5
             }
 
             #historical-btn{
@@ -96,46 +95,31 @@
         }
     }
 
-    
 
-    
-
-    
+    // facts : -----------------------------------------------------------
 
     .fact-heading{ // facts headings
         list-style-type: none;
         font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
         font-weight: 600;
         padding: 3% 0 0;
-
     }
 
     #facts-div{
-
         margin-top: 3%;
-        width: 45vw;
+        width: 50vw;
 
         #fact-ul{
             padding: 0;
-            
-    
-            
+
             .fact-text{
                 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
                 font-weight: 100;
-                padding: 5%;
+                padding: 3%;
                 list-style-type: none;
-                // background-color: lightblue;
                 margin: 1% 0;
-                
-
-                
-            }
-            
+                border-radius: 3px;
+            } 
         }
-
-
-    }
-
-    
+    }  
 }

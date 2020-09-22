@@ -72,12 +72,12 @@ const displayFacts = (day, month, year, fact, type) => { // function that takes 
     let ul = document.getElementById("fact-ul")
     ul.prepend(li) // append the fact and date to the ul
     ul.prepend(liHeading)
-    if (type == "birth"){
+    if (type == "Birth"){
         li.style.backgroundColor = "#94ff94"
-    } else if (type == "death"){
+    } else if (type == "Death"){
         li.style.backgroundColor = "#666666"
         li.style.color = "white"
-    } else if (type == "event"){
+    } else if (type == "Event"){
         li.style.backgroundColor = "#a3dcff"
     }
     
