@@ -68,6 +68,15 @@ const displayFacts = (date, fact, type) => { // function that takes in the year 
     let ul = document.getElementById("fact-ul")
     ul.appendChild(liHeading)
     ul.appendChild(li) // append the fact and date to the ul
+    if (type == "birth"){
+        li.style.backgroundColor = "#94ff94"
+    } else if (type == "death"){
+        li.style.backgroundColor = "#666666"
+        li.style.color = "white"
+    } else if (type == "event"){
+        li.style.backgroundColor = "#a3dcff"
+    }
+    
 }
 
 const randomFact = () => {
@@ -79,7 +88,7 @@ const randomFact = () => {
     // keep it max 28 for feb
     let randomMonth = Math.floor(Math.random() * 12)
     if (randomMonth == 2){
-        
+
     }
     
 }
