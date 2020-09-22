@@ -75,9 +75,20 @@
                 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
                 font-size: 1em;
                 margin-top: 3%;
+                border: 1px solid grey;
+                border-radius: 3px;
+                background-color: white;
+                box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.55)
+                // border-color: #4287f5
             }
 
-            #historical-btn, #clear-btn{ 
+            #historical-btn{
+                padding: 2% 10%;
+                border: 1px solid #4287f5;
+                
+            }
+            #clear-btn{
+                border: 1px solid red;
                 padding: 2% 10%;
             }
 
