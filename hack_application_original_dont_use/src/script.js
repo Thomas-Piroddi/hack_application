@@ -1,4 +1,4 @@
-const callEventsApi = async (month, day) => {
+const callEventsApi = async (month, day) => { // gets events
     const call = await fetch(`https://byabbe.se/on-this-day/${month}/${day}/events.json`)
     .then((res) => res) // returns our result
     .catch((err) => err) // returns the error
@@ -13,7 +13,7 @@ const callEventsApi = async (month, day) => {
     
 }
     
-const callDeathApi = async (month, day) => {
+const callDeathApi = async (month, day) => { // gets deaths
     const call = await fetch(`https://byabbe.se/on-this-day/${month}/${day}/deaths.json`)
     .then((res) => res) // return our result
     .catch((err) => err) // returns the error
@@ -26,7 +26,7 @@ const callDeathApi = async (month, day) => {
     displayFacts(day, month, randomDeath.year, randomDeath.description, "Death")
 }
     
-const callBirthApi = async (month,day) => {
+const callBirthApi = async (month,day) => { // gets births
     const call = await fetch(`https://byabbe.se/on-this-day/${month}/${day}/births.json`)
     .then((res) => res) // return result
     .catch((err) => err) // return error
@@ -40,7 +40,7 @@ const callBirthApi = async (month,day) => {
 
 }
 
-const callAllApi = (month, day) => { // display one of each type
+const callAllApi = (month, day) => { // gets one of each type
 
     let event = callEventsApi(month, day)
     let birth = callBirthApi(month, day)
@@ -48,15 +48,15 @@ const callAllApi = (month, day) => { // display one of each type
 
 }
 
-let button = document.getElementById("clear-btn")
+let button = document.getElementById("clear-btn") // allow button to be accessible outside of functions
 button.style.display = "none"
 let ul = document.getElementById("fact-ul")
-const displayFacts = (day, month, year, fact, type) => { // function that takes in the year and the fact and displays them
+
+const displayFacts = (day, month, year, fact, type) => { // function that takes in the date, fact and type and displays them
     let liHeading = document.createElement("li") // create heading
     let li = document.createElement("li") 
 
     
-    // day.style.textDecoration = "italic"
     
     let factText = document.createTextNode(`${day}/${month}/${year} - ${fact}`)
 
@@ -86,6 +86,7 @@ const displayFacts = (day, month, year, fact, type) => { // function that takes 
     } 
     
 }
+
 if (ul.hasChildNodes() == false){
     button.style.display = "none"
 } 
@@ -93,51 +94,34 @@ if (ul.hasChildNodes() == false){
 
 
 
-const randomFact = () => {
+const randomFact = () => { // feelin historical
     // get random number between one and 3 for events, births and deaths
     // get random date - (random 1-12 for months), (random 1-30) 
     // consider different month lengths 
     // 30 days - sep, april, june, nov / 4, 6, 9, 11
     // 31 days - jan, march, may, july, august, oct, dec
-    // keep it max 28 for feb
+    // keep it max 29 for feb
 
-    let randomMonth = Math.floor(Math.random() * 12) + 1
+    let randomMonth = Math.floor(Math.random() * 12) + 1 // get a random month
     let randomDay = 0
-    if (randomMonth == 2){
-        randomDay = Math.floor(Math.random() * 29) + 1 
+    if (randomMonth == 2){ // if february - 1-29
+        randomDay = Math.floor(Math.random() * 29) + 1 // months with 30 days - 1-30
     } else if (randomMonth == 4 || randomMonth == 6 || randomMonth == 9 || randomMonth == 11){
         randomDay = Math.floor(Math.random() * 30) + 1
-    } else {
+    } else { // the rest - 1-31
         randomDay = Math.floor(Math.random() * 31) + 1
     }
 
-    let functionArray = [callEventsApi, callBirthApi, callDeathApi]
-    let randomNumber = Math.floor(Math.random() * 4)
+    let functionArray = [callEventsApi, callBirthApi, callDeathApi] 
+    let randomNumber = Math.floor(Math.random() * 4) // 0-3 to choose from array ^
     
     return (functionArray[randomNumber])(randomMonth, randomDay)
     
 }
 
-const clearBtn = () => {
+const clearBtn = () => { // clears everything
     let ul = document.getElementById("fact-ul")
-    let dateForm = document.getElementById("date-form")
+    ul.remove() // clear all facts
+    location.reload() // reload page - clear form
 
-    try{
-        ul.remove()
-        // button.style.display = "none"
-        // dateForm.value = ""
-        location.reload()
-        
-        // events.disabled = true
-        // births.disabled = true
-        // deaths.disabled = true
-        // all.disabled = true
-    }
-    catch(err){
-        console.log(err)
-
-    }
-    
 }
-
-// clearBtn()
