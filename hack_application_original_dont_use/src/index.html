@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dropdown.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+</head>
+<body>
+
+    <div id="heading">
+        <h1>Enter your birthday below to recieve a special fact</h1>
+        <h4>You may choose an event, a birth, or a death that occured on your date</h4>
+        </div>
+    <div id="page">
+        <div id="form-and-btns">
+        <!-- dropdown here -->
+            <div id="dropdown-div">
+            </div>
+            <div id="datepicker-div">
+                <input type="date" onChange="onChangeHandler(value)">
+            </div>
+            
+
+            <div id="btns">
+                <div id="first-row">
+                <button id="event-btn" class="button" onclick="callEventsApi(day, month)">Events</button>
+                <button id="birth-btn" class="button" onclick="callBirthApi(day, month)">Births</button>
+                <button id="death-btn" class="button" onclick="callDeathApi(day, month)">Deaths</button>
+                <button id="all-btn" class="button" onclick="callAllApi(day, month)">One of each</button>
+                </div>
+                <button id="historical-btn" class="button" onclick="randomFact()">I'm feelin' historical</button>
+            </div>
+    </div>
+
+        <div id="facts-div">
+            <ul id="fact-ul"></ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        let day = '';
+        let month = '';
+        const onChangeHandler = (value) => {
+            day = parseInt(`${value[5]}${value[6]}`);
+            month = parseInt(`${value[8]}${value[9]}`);
+        }
+    </script>
+</body>
+</html>
