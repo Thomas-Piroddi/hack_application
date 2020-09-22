@@ -83,15 +83,28 @@ const randomFact = () => {
     // get random number between one and 3 for events, births and deaths
     // get random date - (random 1-12 for months), (random 1-30) 
     // consider different month lengths 
-    // 30 days - sep, april, june, nov
+    // 30 days - sep, april, june, nov / 4, 6, 9, 11
     // 31 days - jan, march, may, july, august, oct, dec
     // keep it max 28 for feb
-    let randomMonth = Math.floor(Math.random() * 12)
-    if (randomMonth == 2){
 
+    let randomMonth = Math.floor(Math.random() * 12) + 1
+    let randomDay = 0
+    if (randomMonth == 2){
+        randomDay = Math.floor(Math.random() * 29) + 1 
+    } else if (randomMonth == 4 || randomMonth == 6 || randomMonth == 9 || randomMonth == 11){
+        randomDay = Math.floor(Math.random() * 30) + 1
+    } else {
+        randomDay = Math.floor(Math.random() * 31) + 1
     }
+
+    let functionArray = [callEventsApi, callBirthApi, callDeathApi]
+    let randomNumber = Math.floor(Math.random() * 4)
+    
+    return (functionArray[randomNumber])(randomMonth, randomDay)
     
 }
+
+
 
 
 
