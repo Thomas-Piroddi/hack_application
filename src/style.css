@@ -4,6 +4,11 @@
           box-sizing: border-box;
 }
 
+#error-div {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: red;
+}
+
 #heading {
   height: 20vh;
   width: 100%;
@@ -41,7 +46,6 @@
   -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
           box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
   width: 40vw;
-  height: 25vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,14 +59,21 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 4% 2%;
+  padding: 2% 2%;
   margin-top: 2%;
+}
+
+#page #form-and-btns input[type=date] {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 1.05em;
+  width: 18vw;
 }
 
 #page #form-and-btns #dropdown-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 4%;
 }
 
 #page #form-and-btns #btns {
@@ -74,6 +85,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-bottom: 5%;
 }
 
 #page #form-and-btns #btns #first-row {
@@ -98,9 +110,20 @@
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 1em;
   margin-top: 3%;
+  border: 1px solid grey;
+  border-radius: 3px;
+  background-color: white;
+  -webkit-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.55);
+          box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.55);
 }
 
 #page #form-and-btns #btns #historical-btn {
+  padding: 2% 10%;
+  border: 1px solid #4287f5;
+}
+
+#page #form-and-btns #btns #clear-btn {
+  border: 1px solid red;
   padding: 2% 10%;
 }
 
