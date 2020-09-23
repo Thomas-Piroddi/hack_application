@@ -7,21 +7,17 @@ const callEventsApi = async (month, day) => { // gets events
     const eventList = result.events;
     const randomEvent = eventList[Math.floor(Math.random() * eventList.length)];
 
-
-
     displayFacts(day, month, randomEvent.year, randomEvent.description, "Event")
-    
 }
     
 const callDeathApi = async (month, day) => { // gets deaths
     const call = await fetch(`https://byabbe.se/on-this-day/${month}/${day}/deaths.json`)
     .then((res) => res) // return our result
     .catch((err) => err) // returns the error
-    const result = await call.json() // this is gonna fetch API returns 'readableStream', you must run .json() to convert it to JSON. same as up^^
 
+    const result = await call.json() // this is gonna fetch API returns 'readableStream', you must run .json() to convert it to JSON. same as up^^
     const deathList = result.deaths;
     const randomDeath = deathList[Math.floor(Math.random() * deathList.length)];
-
 
     displayFacts(day, month, randomDeath.year, randomDeath.description, "Death")
 }
@@ -33,11 +29,9 @@ const callBirthApi = async (month,day) => { // gets births
 
     const result = await call.json() // Fetch API returns 'readableStream', you must run .json() to convert it to JSON.
     const eventList = result.births;
-
     const randomBirth = eventList[Math.floor(Math.random() * eventList.length)];
 
     displayFacts(day, month, randomBirth.year, randomBirth.description, "Birth")
-
 }
 
 const callAllApi = (month, day) => { // gets one of each type
@@ -49,7 +43,7 @@ const callAllApi = (month, day) => { // gets one of each type
 }
 
 let button = document.getElementById("clear-btn") // allow button to be accessible outside of functions
-button.style.display = "none"
+button.style.display = "none" // hide clear button initially
 let ul = document.getElementById("fact-ul")
 
 const displayFacts = (day, month, year, fact, type) => { // function that takes in the date, fact and type and displays them
@@ -81,13 +75,13 @@ const displayFacts = (day, month, year, fact, type) => { // function that takes 
         li.style.backgroundColor = "#a3dcff"
     }
     
-    if (ul.hasChildNodes() == true){
+    if (ul.hasChildNodes() == true){ // if facts are prepended -> show clear button
         button.style.display = "block"
     } 
     
 }
 
-if (ul.hasChildNodes() == false){
+if (ul.hasChildNodes() == false){ // if no facts -> hide clear button
     button.style.display = "none"
 } 
 
