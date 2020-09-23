@@ -4,6 +4,11 @@
           box-sizing: border-box;
 }
 
+#error-div {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: red;
+}
+
 #heading {
   height: 20vh;
   width: 100%;
