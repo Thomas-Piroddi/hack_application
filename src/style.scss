@@ -3,6 +3,13 @@
     box-sizing: border-box;
 }
 
+#error-div{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: red;
+    
+}
+
+
 #heading{ // heading text div
     height: 20vh;
     width: 100%;
@@ -79,7 +86,7 @@
                 border-radius: 3px;
                 background-color: white;
                 box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.55)
-                // border-color: #4287f5
+
             }
 
             #historical-btn{

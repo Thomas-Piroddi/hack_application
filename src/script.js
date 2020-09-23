@@ -38,7 +38,15 @@ const callDeathApi = async (month, day) => { // gets deaths
             clearError();
             displayFacts(day, month, randomDeath.year, randomDeath.description, "Death")
         }) // return our result
-        .catch(() => displayError()) // displays error
+        .catch((err) => {
+            if (err instanceof SyntaxError){
+                displayError('Invalid input')
+            } else if (err instanceof TypeError){
+                displayError('Unable to contact API')
+            } else {
+                displayError('Please try again')
+            }
+         }) // displays error
 }
     
 const callBirthApi = async (month, day) => { // gets births
@@ -49,7 +57,15 @@ const callBirthApi = async (month, day) => { // gets births
             const randomBirth = eventList[Math.floor(Math.random() * eventList.length)];
             displayFacts(day, month, randomBirth.year, randomBirth.description, "Birth")
         }) // return result
-        .catch(() => displayError()) // return error
+        .catch((err) => {
+            if (err instanceof SyntaxError){
+                displayError('Invalid input')
+            } else if (err instanceof TypeError){
+                displayError('Unable to contact API')
+            } else {
+                displayError('Please try again')
+            }
+         }) // return error
 }
 
 const callAllApi = (month, day) => { // gets one of each type
