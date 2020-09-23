@@ -4,7 +4,6 @@
 }
 
 #heading{ // heading text div
-    // background-color: #f2f2f2;
     height: 20vh;
     width: 100%;
     text-align: center;
@@ -34,29 +33,32 @@
 
 
     
-
-    
     #form-and-btns{ // div for the btns and the dropdowns
         box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
         width: 40vw;
-        height: 25vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 4% 2%;
+        padding: 2% 2%;
         margin-top: 2%;
+
+        input[type=date]{
+            font-family:  "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            font-size: 1.05em;
+            width: 18vw;
+        } 
 
         #dropdown-div{
             display: flex;
-            
-
+            padding-top:4%;
         }
 
         #btns{
             width: 100%;
             display: flex;
             flex-direction: column;
+            padding-bottom: 5%;
 
             #first-row{ // div of events -> one of each
                 display: flex;
@@ -70,16 +72,27 @@
             }
 
             .button{
-                // padding: 2%;
-
                 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
                 font-size: 1em;
                 margin-top: 3%;
+                border: 1px solid grey;
+                border-radius: 3px;
+                background-color: white;
+                box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.55)
+                // border-color: #4287f5
             }
 
-            #historical-btn{ 
+            #historical-btn{
+                padding: 2% 10%;
+                border: 1px solid #4287f5;
+                
+            }
+            #clear-btn{
+                border: 1px solid red;
                 padding: 2% 10%;
             }
+
+            
         }
     }
 
@@ -94,14 +107,13 @@
         font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
         font-weight: 600;
         padding: 3% 0 0;
+
     }
 
     #facts-div{
 
         margin-top: 3%;
-        // background-color: lightgreen;
         width: 45vw;
-        // padding: 3% 1%;
 
         #fact-ul{
             padding: 0;
